@@ -22,7 +22,7 @@ async function generatecaption(base64ImageFile) {
         your caption is short
         you do not generate a multiple captions
         use a emojis and hashtags
-        generate a caption in tapori language
+        
       
         
       `
