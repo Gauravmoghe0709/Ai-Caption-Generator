@@ -17,8 +17,19 @@ async function generatecaption(base64ImageFile) {
   const response = await ai.models.generateContent({       //  this is a AI model to use generate a caption in text form
     model: "gemini-2.5-flash",
     contents: contents,
+    config:{                             // system instruction You can guide the behavior of Gemini models with system instructions how to response from Ai
+      systemInstruction:`                                  
+        your caption is short
+        you do not generate a multiple captions
+        use a emojis and hashtags
+        generate a caption in tapori language
+      
+        
+      `
+         
+    }
   });
-  console.log(response.text);  // getting a response from Ai 
+  return response.text;  // getting a response from Ai 
 
 }
 
